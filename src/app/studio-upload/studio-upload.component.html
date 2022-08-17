@@ -1,0 +1,25 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div>
+             <button mat-button routerLink="/">ViewTube</button>
+        </div>
+        <br />
+
+        <button mat-button routerLink="upload">Upload</button>
+        <br />
+        <button mat-button routerLink="livestream">Live</button>
+
+    </mat-drawer>
+
+
+    <mat-drawer-content>
+
+        <mat-toolbar color="primary">
+            <span>ViewTube Studio</span>
+
+        </mat-toolbar>
+
+        <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,103 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>View Tube</span>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="legacy">
+        <mat-label>Search</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <button mat-button class="example-icon">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+    <button mat-icon-button class="example-icon" matTooltip="AUDIO SEARCH"
+      aria-label="Example icon-button with share icon">
+      <mat-icon>mic</mat-icon>
+    </button>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp;
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" matTooltip="NOTIFY ME"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>notifications</mat-icon>
+    </button>
+
+    <!-- VIDEO STUDIO BUTTON WILL OPEN ANOTHER SPA -->
+    <button mat-icon-button class="example-icon" matTooltip="VIDEO CALL"
+      aria-label="Example icon-button with share icon">
+      <button mat-button routerLink="video" (click)="videoclick()">  
+          <!-- <button mat-button routerLink="account">   -->
+        <mat-icon>video_call</mat-icon>
+      </button>
+    </button>
+  
+
+
+    <button mat-icon-button matTooltip="apps" class="example-icon favorite-icon"
+      aria-label="Example icon-button with  icon">
+      <mat-icon>apps</mat-icon>
+    </button>
+
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon matTooltip="MANAGE PROFILE">person_outline</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Setting</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>help</mat-icon>
+        <span>Help</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>message</mat-icon>
+        <span>Send feedback</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+</p>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side">
+    <mat-icon>home</mat-icon>Home
+    <br />
+    <mat-icon>explore</mat-icon>Explore
+    <br />
+    <mat-icon>shop</mat-icon>Subscription
+    <br />
+    <mat-icon>movie</mat-icon>Library
+    <br />
+    <mat-icon>history</mat-icon>History
+    <br />
+    <br />
+    <hr color="white" />
+    Sign in to like videos,<br /> comment, and subscribe &nbps <BR />
+    <button mat-icon-button matTooltip="apps" class="example-icon favorite-icon"
+      aria-label="Example icon-button with  icon" color="primary">
+      <mat-icon>sync</mat-icon>SIGN IN
+    </button>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <app-chips-bar></app-chips-bar>
+    <app-video-content></app-video-content>
+  </mat-drawer-content>
+</mat-drawer-container>
